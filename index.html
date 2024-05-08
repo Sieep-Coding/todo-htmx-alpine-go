@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do</title>
+    <title>ToDo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
-
 </head>
 <body class="container">
-
     <div class="row mt-4 g-4" x-data="{todos: {{ .Todos }} }">
         <div class="col-8">
-            <h1 class="mb-4">Todo List</h1>
-        
+            <h1 class="mb-4 text-center neon">ToDo List</h1>
             <table class="table">
                 <thead>
                     <tr>
@@ -24,22 +22,19 @@
                         <th>Completed</th>
                     </tr>
                 </thead>
-                
-            <tbody id="todo-table-body">
-                <template x-for="todo in todos">
-                    <tr>
-                        <td x-text="todo.id"></td>
-                        <td x-text="todo.name"></td>
-                        <td x-text="todo.isCompleted"></td>
-                    </tr>
-            </tbody>
-
+                <tbody id="todo-table-body">
+                    <template x-for="todo in todos">
+                        <tr>
+                            <td x-text="todo.id"></td>
+                            <td x-text="todo.name"></td>
+                            <td x-text="todo.isCompleted"></td>
+                        </tr>
+                    </template>
+                </tbody>
             </table>
         </div>
-
         <div class="col-4">
-            <h1 class="mb-4">Add a Todo</h1>
-
+            <h1 class="mb-4 text-center neon">Add a ToDo</h1>
             <form hx-post="/submit-todo/" hx-target="#todo-table-body">
                 <div class="mb-2">
                     <label>Todo Name</label>
@@ -49,13 +44,9 @@
                     <label>Did you finish?</label>
                     <input type="checkbox" name="completed" value="true" />
                 </div>
-
-                <input type="submit" value="submit" class="btn btn-primary" />
-                
+                <input type="submit" value="submit" class="btn btn-primary neon-btn" />
             </form>
         </div>
-
     </div>
-
 </body>
 </html>
