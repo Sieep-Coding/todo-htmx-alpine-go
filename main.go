@@ -14,9 +14,7 @@ type Todo struct {
 }
 
 var todos = []Todo{
-	{Id: 1, Name: "Learn Go", IsCompleted: false},
-	{Id: 2, Name: "Learn Alpine", IsCompleted: false},
-	{Id: 3, Name: "Go to the gym", IsCompleted: true},
+	{Id: 1, Name: "Work on Code :)", IsCompleted: false},
 }
 
 var templates map[string]*template.Template

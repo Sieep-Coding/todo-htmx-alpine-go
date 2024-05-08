@@ -18,14 +18,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #fff;
             text-shadow:
-                0 0 7px #fff,
+                0 0 7px #a12323,
                 0 0 10px #fff,
                 0 0 21px #fff,
                 0 0 42px #0fa,
-                0 0 82px #0fa,
-                0 0 92px #0fa,
-                0 0 102px #0fa,
-                0 0 121px #0fa;
+                0 0 42px #0fa,
+                0 0 92px rgb(0, 217, 255),
+                0 0 102px rgb(0, 238, 255),
+                0 0 100px rgb(0, 255, 255);
         }
 
         .neon-btn {
@@ -50,11 +50,11 @@
         }
     </style>
 </head>
-<body class="container">
+<body class="container text-white">
     <div class="row mt-4 g-4" x-data="{todos: {{ .Todos }} }">
         <div class="col-8">
             <h1 class="mb-4 text-center neon">ToDo List</h1>
-            <table class="table">
+            <table class="table text-white">
                 <thead>
                     <tr>
                         <th>ID</th>
