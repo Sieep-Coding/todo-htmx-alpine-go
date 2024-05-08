@@ -30,6 +30,12 @@ func init() {
 }
 
 // handlers
+func submitTodoHandler(w http.ResponseWriter, r *http.Request) {
+	name := r.PostFormValue("name")
+	completed := r.PostFormValue("completed") == "true"
+	todo := Todo{Id: 4, Name: name, IsCompleted: completed}
+}
+
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	json, err := json.Marshal(todos)
 
@@ -43,5 +49,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/submit-todo", submitTodoHandler)
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
