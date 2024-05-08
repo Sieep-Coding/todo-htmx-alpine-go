@@ -24,8 +24,13 @@
                     </tr>
                 </thead>
                 
-            <tbody>
-                <!-- TBC -->
+            <tbody id="todo-table-body">
+                <template x-for="todo in todos">
+                    <tr>
+                        <td x-text="todo.id"></td>
+                        <td x-text="todo.name"></td>
+                        <td x-text="todo.isCompleted"></td>
+                    </tr>
             </tbody>
 
             </table>
