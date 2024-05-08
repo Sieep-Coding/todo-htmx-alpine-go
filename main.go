@@ -35,7 +35,6 @@ func submitTodoHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.PostFormValue("name")
 	completed := r.PostFormValue("completed") == "true"
 	todo := Todo{Id: 4, Name: name, IsCompleted: completed}
-	todos = append(todos, todo)
 
 	tmpl := templates["todo.html"]
 	tmpl.ExecuteTemplate(w, "todo.html", todo)
@@ -54,6 +53,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/submit-todo", submitTodoHandler)
+	http.HandleFunc("/submit-todo/", submitTodoHandler)
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
