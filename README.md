@@ -32,5 +32,5 @@ Getting Started
 
 1.  Clone the repository
 2.  Install Go (if not already installed)
-3.  Run the Go using `air ` application: ` > air `
+3.  Run the Go using `air` application: ` > air`
 4.  Open your web browser and visit `http://localhost:8000`
